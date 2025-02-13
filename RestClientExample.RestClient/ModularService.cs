@@ -1,6 +1,4 @@
-﻿using RestClientExample.RestClient.Features.Blog;
-
-namespace RestClientExample.RestClient;
+﻿namespace RestClientExample.RestClient;
 
 public static class ModularService
 {
