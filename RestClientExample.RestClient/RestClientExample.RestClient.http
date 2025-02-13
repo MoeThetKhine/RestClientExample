@@ -1,0 +1,6 @@
+@RestClientExample.RestClient_HostAddress = http://localhost:5113
+
+GET {{RestClientExample.RestClient_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
