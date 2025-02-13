@@ -15,11 +15,15 @@ namespace RestClientExample.RestClient
 
 		#endregion
 
+		#region AddDataAccessServices
+
 		public static IServiceCollection AddDataAccessServices(this IServiceCollection services)
 		{
 			services.AddScoped<DA_Blog>();
 			return services;
 		}
+
+		#endregion
 
 		public static IServiceCollection AddCustomServices(this IServiceCollection services, WebApplicationBuilder builder)
 		{
