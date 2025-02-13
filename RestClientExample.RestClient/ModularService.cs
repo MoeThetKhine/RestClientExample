@@ -25,6 +25,7 @@ namespace RestClientExample.RestClient
 
 		#endregion
 
+
 		public static IServiceCollection AddCustomServices(this IServiceCollection services, WebApplicationBuilder builder)
 		{
 			builder.Services.AddDbContext(opt =>
