@@ -1,5 +1,7 @@
 ﻿namespace RestClientExample.RestClient.Models;
 
+#region BlogRequestModel
+
 public class BlogRequestModel
 {
 	public string BlogTitle { get; set; } = null!;
@@ -9,3 +11,5 @@ public class BlogRequestModel
 	public string BlogContent {  get; set; } = null!;
 
 }
+
+#endregion
