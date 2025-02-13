@@ -4,12 +4,16 @@ namespace RestClientExample.RestClient
 {
 	public static class ModularService
 	{
-		
+
+		#region AddBusinessLogicServices
+
 		public static IServiceCollection AddBusinessLogicServices(this  IServiceCollection services)
 		{
 			services.AddScoped<BL_Blog>();
 			return services;
 		}
+
+		#endregion
 
 		public static IServiceCollection AddDataAccessServices(this IServiceCollection services)
 		{
