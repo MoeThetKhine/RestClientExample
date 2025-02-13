@@ -10,6 +10,5 @@ namespace RestClientExample.RestClient
 		}
 
 		public DbSet<BlogModel> Blogs { get; set; }
-
 	}
 }
