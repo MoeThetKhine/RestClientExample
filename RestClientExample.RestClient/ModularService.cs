@@ -38,6 +38,8 @@ namespace RestClientExample.RestClient
 
 		#endregion
 
+		#region AddService
+
 		public static IServiceCollection AddService(this IServiceCollection services, WebApplicationBuilder builder)
 		{
 			services.AddBusinessLogicServices();
@@ -45,6 +47,8 @@ namespace RestClientExample.RestClient
 			services.AddCustomServices(builder);
 			return services;
 		}
+
+		#endregion
 
 	}
 }
