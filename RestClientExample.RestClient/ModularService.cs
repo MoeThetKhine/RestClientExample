@@ -25,6 +25,7 @@ namespace RestClientExample.RestClient
 
 		#endregion
 
+		#region AddCustomServices
 
 		public static IServiceCollection AddCustomServices(this IServiceCollection services, WebApplicationBuilder builder)
 		{
@@ -34,6 +35,8 @@ namespace RestClientExample.RestClient
 			}, ServiceLifetime.Transient);
 			return services;
 		}
+
+		#endregion
 
 		public static IServiceCollection AddService(this IServiceCollection services, WebApplicationBuilder builder)
 		{
