@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using RestClientExample.RestClient.Models;
-
-namespace RestClientExample.RestClient
+﻿namespace RestClientExample.RestClient
 {
 	public class AppDbContext : DbContext
 	{
