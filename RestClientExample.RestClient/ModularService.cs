@@ -26,6 +26,13 @@ namespace RestClientExample.RestClient
 			return services;
 		}
 
-		
+		public static IServiceCollection AddService(this IServiceCollection services, WebApplicationBuilder builder)
+		{
+			services.AddBusinessLogicServices();
+			services.AddDataAccessServices();
+			services.AddCustomServices(builder);
+			return services;
+		}
+
 	}
 }
