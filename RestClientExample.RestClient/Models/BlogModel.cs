@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-
-namespace RestClientExample.RestClient.Models
+﻿namespace RestClientExample.RestClient.Models
 {
 	[Table("Tbl_Blog")]
 	public class BlogModel
