@@ -1,9 +1,8 @@
-﻿namespace RestClientExample.RestClient.Models
+﻿namespace RestClientExample.RestClient.Models;
+
+public class PageSettingModel
 {
-	public class PageSettingModel
-	{
-		public int PageCount { get; set; }	
-		public int PageNo { get; set; }
-		public int PageSize {  get; set; }
-	}
+	public int PageCount { get; set; }	
+	public int PageNo { get; set; }
+	public int PageSize {  get; set; }
 }
