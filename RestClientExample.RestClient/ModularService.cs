@@ -27,7 +27,7 @@ public static class ModularService
 
 	public static IServiceCollection AddCustomServices(this IServiceCollection services, WebApplicationBuilder builder)
 	{
-		builder.Services.AddDbContext(opt =>
+		builder.Services.AddDbContext<AppDbContext>(opt =>
 		{
 			opt.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection"));
 		}, ServiceLifetime.Transient);
