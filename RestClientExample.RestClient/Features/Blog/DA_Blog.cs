@@ -9,6 +9,8 @@ public class DA_Blog
 		_appDbContext = appDbContext;
 	}
 
+	#region GetBlogs
+
 	public async Task<BlogListResponseModel> GetBlogs(int pageNo, int pageSize)
 	{
 		var lst = await _appDbContext.Blogs.AsNoTracking()
@@ -43,4 +45,7 @@ public class DA_Blog
 			}
 		};
 	}
+
+	#endregion
+
 }
