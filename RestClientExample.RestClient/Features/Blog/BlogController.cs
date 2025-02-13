@@ -14,6 +14,8 @@ public class BlogController : ControllerBase
 		_bL_Blog = bL_Blog;
 	}
 
+	#region GetBlogs
+
 	[HttpGet]
 	public async Task<IActionResult> GetBlogs(int pageNo , int pageSize)
 	{
@@ -37,4 +39,6 @@ public class BlogController : ControllerBase
 			});
 		}
 	}
+
+	#endregion
 }
