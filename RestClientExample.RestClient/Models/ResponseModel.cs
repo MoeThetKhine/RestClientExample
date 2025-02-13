@@ -1,5 +1,7 @@
 ﻿namespace RestClientExample.RestClient.Models;
 
+#region ResponseModel
+
 public class ResponseModel
 {
 	public bool IsSuccess {  get; set; }
@@ -9,3 +11,5 @@ public class ResponseModel
 	public object? Item { get; set; }
 	public PageSettingModel PageSetting { get; set; }
 }
+
+#endregion
