@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace RestClientExample.RestClient.Features.Blog;
+﻿namespace RestClientExample.RestClient.Features.Blog;
 
 [Route("api/[controller]")]
 [ApiController]
