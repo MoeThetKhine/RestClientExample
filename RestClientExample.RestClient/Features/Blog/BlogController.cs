@@ -1,41 +1,40 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace RestClientExample.RestClient.Features.Blog
-{
-	[Route("api/[controller]")]
-	[ApiController]
-	public class BlogController : ControllerBase
-	{
-		private readonly BL_Blog _bL_Blog;
+namespace RestClientExample.RestClient.Features.Blog;
 
-		public BlogController(BL_Blog bL_Blog)
+[Route("api/[controller]")]
+[ApiController]
+public class BlogController : ControllerBase
+{
+	private readonly BL_Blog _bL_Blog;
+
+	public BlogController(BL_Blog bL_Blog)
+	{
+		_bL_Blog = bL_Blog;
+	}
+
+	[HttpGet]
+	public async Task<IActionResult> GetBlogs(int pageNo , int pageSize)
+	{
+		try
 		{
-			_bL_Blog = bL_Blog;
+			BlogListResponseModel lst = await _bL_Blog.GetBlog(pageNo, pageSize);
+			return Ok(new ResponseModel()
+			{
+				IsSuccess = true,
+				Data = lst.Data,
+				PageSetting = lst.PageSetting,
+			});
 		}
 
-		[HttpGet]
-		public async Task<IActionResult> GetBlogs(int pageNo , int pageSize)
+		catch(Exception ex)
 		{
-			try
+			return BadRequest(new ResponseModel()
 			{
-				BlogListResponseModel lst = await _bL_Blog.GetBlog(pageNo, pageSize);
-				return Ok(new ResponseModel()
-				{
-					IsSuccess = true,
-					Data = lst.Data,
-					PageSetting = lst.PageSetting,
-				});
-			}
-
-			catch(Exception ex)
-			{
-				return BadRequest(new ResponseModel()
-				{
-					IsSuccess = false,
-					Message = ex.Message
-				});
-			}
+				IsSuccess = false,
+				Message = ex.Message
+			});
 		}
 	}
 }
