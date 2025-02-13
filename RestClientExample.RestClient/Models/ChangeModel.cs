@@ -1,19 +1,18 @@
-﻿namespace RestClientExample.RestClient.Models
+﻿namespace RestClientExample.RestClient.Models;
+
+public static class ChangeModel
 {
-	public static class ChangeModel
+	#region Change
+
+	public static BlogModel Change(this BlogRequestModel requestModel)
 	{
-		#region Change
-
-		public static BlogModel Change(this BlogRequestModel requestModel)
+		return new BlogModel()
 		{
-			return new BlogModel()
-			{
-				BlogTitle = requestModel.BlogTitle,
-				BlogAuthor = requestModel.BlogAuthor,
-				BlogContent = requestModel.BlogContent,
-			};
-		}
-
-		#endregion
+			BlogTitle = requestModel.BlogTitle,
+			BlogAuthor = requestModel.BlogAuthor,
+			BlogContent = requestModel.BlogContent,
+		};
 	}
+
+	#endregion
 }
