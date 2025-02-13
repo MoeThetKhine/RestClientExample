@@ -17,7 +17,15 @@ namespace RestClientExample.RestClient
 			return services;
 		}
 
-		
+		public static IServiceCollection AddCustomServices(this IServiceCollection services, WebApplicationBuilder builder)
+		{
+			builder.Services.AddDbContext(opt =>
+			{
+				opt.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection"));
+			}, ServiceLifetime.Transient);
+			return services;
+		}
 
+		
 	}
 }
