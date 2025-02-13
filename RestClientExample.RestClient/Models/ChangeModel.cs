@@ -2,6 +2,8 @@
 {
 	public static class ChangeModel
 	{
+		#region Change
+
 		public static BlogModel Change(this BlogRequestModel requestModel)
 		{
 			return new BlogModel()
@@ -11,5 +13,7 @@
 				BlogContent = requestModel.BlogContent,
 			};
 		}
+
+		#endregion
 	}
 }
