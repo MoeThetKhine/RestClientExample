@@ -5,4 +5,3 @@ global using Microsoft.EntityFrameworkCore;
 global using RestClientExample.RestClient.Models;
 global using RestClientExample.RestClient;
 global using Microsoft.AspNetCore.Mvc;
-
