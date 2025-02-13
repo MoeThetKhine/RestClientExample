@@ -1,5 +1,3 @@
-using RestClientExample.RestClient;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers().AddJsonOptions(opt =>
