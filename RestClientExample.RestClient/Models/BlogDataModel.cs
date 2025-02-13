@@ -1,7 +1,6 @@
-﻿namespace RestClientExample.RestClient.Models
+﻿namespace RestClientExample.RestClient.Models;
+
+public class BlogDataModel
 {
-	public class BlogDataModel
-	{
-		public List<BlogModel> Blogs { get; set; }
-	}
+	public List<BlogModel> Blogs { get; set; }
 }
