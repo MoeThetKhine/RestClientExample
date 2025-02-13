@@ -9,6 +9,8 @@
 			_dA_Blog = dA_Blog;
 		}
 
+		#region GetBlog
+
 		public async Task<BlogListResponseModel> GetBlog(int pageNo, int pageSize)
 		{
 			if (pageNo == 0 || pageSize == 0)
@@ -16,5 +18,7 @@
 
 			return await _dA_Blog.GetBlogs(pageNo, pageSize);
 		}
+
+		#endregion
 	}
 }
