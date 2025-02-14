@@ -31,4 +31,25 @@ public class BL_Blog
 		return await _dA_Blog.GetBlog(id);
 	}
 
+	public async Task<int> CreateBlog(BlogRequestModel requestModel)
+	{
+		if(string.IsNullOrEmpty(requestModel.BlogTitle))
+		{
+			throw new Exception("Blog Title cannot be empty.");
+		}
+
+		if(string.IsNullOrEmpty(requestModel.BlogAuthor))
+		{
+			throw new Exception("Blog Author cannot be empty.");
+		}
+
+		if(string.IsNullOrEmpty(requestModel.BlogContent))
+		{
+			throw new Exception("Blog Content cannot be empty.");
+		}
+
+		int result = await _dA_Blog.CreateBlog(requestModel);
+		return result;
+	}
+
 }
