@@ -65,6 +65,8 @@ public class BL_Blog
 
 	#endregion
 
+	#region UpdateBlog
+
 	public async Task<int> UpdateBlog(BlogRequestModel requestModel, long id)
 	{
 		if(id == 0)
@@ -90,6 +92,8 @@ public class BL_Blog
 		int result = await _dA_Blog.UpdateBlog(requestModel, id);
 		return result;
 	}
+
+	#endregion
 
 	public async Task<int> PatchBlog(BlogRequestModel requestModel, long id)
 	{
