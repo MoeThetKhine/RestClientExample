@@ -50,7 +50,7 @@ public class DA_Blog
 
 	#region GetBlog
 
-	public async Task<BlogModel> GetBlog(long id)
+	public async Task<BlogModel> GetBlog(int id)
 	{
 		var item = await _appDbContext.Blogs
 			.AsNoTracking()
@@ -74,7 +74,7 @@ public class DA_Blog
 
 	#region UpdateBlog
 
-	public async Task<int> UpdateBlog(BlogRequestModel requestModel, long id)
+	public async Task<int> UpdateBlog(BlogRequestModel requestModel, int id)
 	{
 		BlogModel? item = await _appDbContext.Blogs
 			.AsNoTracking()
@@ -92,7 +92,7 @@ public class DA_Blog
 
 	#region PatchBlog
 
-	public async Task<int> PatchBlog(BlogRequestModel requestModel, long id)
+	public async Task<int> PatchBlog(BlogRequestModel requestModel, int id)
 	{
 		BlogModel? item = await _appDbContext.Blogs
 			.AsNoTracking()
@@ -126,7 +126,7 @@ public class DA_Blog
 
 	#region DeleteBlog
 
-	public async Task<int> DeleteBlog(long id)
+	public async Task<int> DeleteBlog(int id)
 	{
 		BlogModel? item = await _appDbContext.Blogs
 			.AsNoTracking()
