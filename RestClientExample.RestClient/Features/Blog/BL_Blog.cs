@@ -35,8 +35,11 @@ public class BL_Blog
 
 	#endregion
 
+	#region CreateBlog
+
 	public async Task<int> CreateBlog(BlogRequestModel requestModel)
 	{
+
 		if(string.IsNullOrEmpty(requestModel.BlogTitle))
 		{
 			throw new Exception("Blog Title cannot be empty.");
@@ -55,6 +58,8 @@ public class BL_Blog
 		int result = await _dA_Blog.CreateBlog(requestModel);
 		return result;
 	}
+
+	#endregion
 
 	public async Task<int> UpdateBlog(BlogRequestModel requestModel, long id)
 	{
