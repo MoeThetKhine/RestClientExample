@@ -115,6 +115,8 @@ public class BL_Blog
 
 	#endregion
 
+	#region DeleteBlog
+
 	public async Task<int> DeleteBlog(long id)
 	{
 		if (id == 0)
@@ -125,5 +127,7 @@ public class BL_Blog
 		int result = await _dA_Blog.DeleteBlog(id);
 		return result;
 	}
+
+	#endregion
 
 }
