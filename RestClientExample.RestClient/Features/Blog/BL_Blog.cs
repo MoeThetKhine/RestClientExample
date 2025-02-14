@@ -9,9 +9,9 @@ public class BL_Blog
 		_dA_Blog = dA_Blog;
 	}
 
-	#region GetBlog
+	#region GetBlogs
 
-	public async Task<BlogListResponseModel> GetBlog(int pageNo, int pageSize)
+	public async Task<BlogListResponseModel> GetBlogs(int pageNo, int pageSize)
 	{
 		if (pageNo == 0 || pageSize == 0)
 			throw new Exception("Invalid Request.");
@@ -20,5 +20,15 @@ public class BL_Blog
 	}
 
 	#endregion
+
+	public async Task<BlogModel> GetBlog (long id)
+	{
+		if(id == 0)
+		{
+			throw new Exception("Id cannot be empty.");
+		}
+
+		return await _dA_Blog.GetBlog(id);
+	}
 
 }
