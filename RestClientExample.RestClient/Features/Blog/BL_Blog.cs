@@ -23,7 +23,7 @@ public class BL_Blog
 
 	#region GetBlog
 
-	public async Task<BlogModel> GetBlog (long id)
+	public async Task<BlogModel> GetBlog (int id)
 	{
 		if(id == 0)
 		{
@@ -67,7 +67,7 @@ public class BL_Blog
 
 	#region UpdateBlog
 
-	public async Task<int> UpdateBlog(BlogRequestModel requestModel, long id)
+	public async Task<int> UpdateBlog(BlogRequestModel requestModel, int id)
 	{
 
 		#region Validation
@@ -102,7 +102,7 @@ public class BL_Blog
 
 	#region PatchBlog
 
-	public async Task<int> PatchBlog(BlogRequestModel requestModel, long id)
+	public async Task<int> PatchBlog(BlogRequestModel requestModel, int id)
 	{
 		if(id == 0)
 		{
@@ -117,7 +117,7 @@ public class BL_Blog
 
 	#region DeleteBlog
 
-	public async Task<int> DeleteBlog(long id)
+	public async Task<int> DeleteBlog(int id)
 	{
 		if (id == 0)
 		{
