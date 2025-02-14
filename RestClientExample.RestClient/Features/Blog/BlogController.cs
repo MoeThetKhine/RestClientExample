@@ -42,7 +42,7 @@ public class BlogController : ControllerBase
 	#region GetBlog
 
 	[HttpGet("{id}")]
-	public async Task<IActionResult> GetBlog(long id)
+	public async Task<IActionResult> GetBlog(int id)
 	{
 		try
 		{
@@ -99,7 +99,7 @@ public class BlogController : ControllerBase
 	#region UpdateBlog
 
 	[HttpPut("{id}")]
-	public async Task<IActionResult> UpdateBlog([FromBody]BlogRequestModel requestModel,long id)
+	public async Task<IActionResult> UpdateBlog([FromBody]BlogRequestModel requestModel,int id)
 	{
 		try
 		{
@@ -132,7 +132,7 @@ public class BlogController : ControllerBase
 	#region PatchBlog
 
 	[HttpPatch("{id}")]
-	public async Task<IActionResult> PatchBlog([FromBody] BlogRequestModel requestModel,long id)
+	public async Task<IActionResult> PatchBlog([FromBody] BlogRequestModel requestModel,int id)
 	{
 		try
 		{
@@ -166,7 +166,7 @@ public class BlogController : ControllerBase
 	#region DeleteBlog
 
 	[HttpDelete("{id}")]
-	public async Task<IActionResult> DeleteBlog(long id)
+	public async Task<IActionResult> DeleteBlog(int id)
 	{
 		int result = await _bL_Blog.DeleteBlog(id);
 		ResponseModel responseModel = new();
