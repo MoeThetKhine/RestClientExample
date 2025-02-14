@@ -78,4 +78,30 @@ public class DA_Blog
 		return result;
 	}
 
+	public async Task<int> PatchBlog(BlogRequestModel requestModel, long id)
+	{
+		BlogModel? item = await _appDbContext.Blogs
+			.AsNoTracking()
+			.FirstOrDefaultAsync(x => x.BlogId == id) ?? throw new Exception("No data found.");
+
+		if(!string.IsNullOrEmpty(requestModel.BlogTitle))
+		{
+			item.BlogTitle = requestModel.BlogTitle;
+		}
+
+		if(!string.IsNullOrEmpty(requestModel.BlogAuthor))
+		{
+			item.BlogAuthor = requestModel.BlogAuthor;
+		}
+		if (!string.IsNullOrEmpty(requestModel.BlogContent))
+		{
+			item.BlogContent = requestModel.BlogContent;
+		}
+
+		_appDbContext.Entry(item).State |= EntityState.Modified;
+		int result = await _appDbContext.SaveChangesAsync();
+
+		return result;
+	}
+
 }
