@@ -48,6 +48,8 @@ public class DA_Blog
 
 	#endregion
 
+	#region GetBlog
+
 	public async Task<BlogModel> GetBlog(long id)
 	{
 		var item = await _appDbContext.Blogs
@@ -56,6 +58,8 @@ public class DA_Blog
 
 		return item!;
 	}
+
+	#endregion
 
 	public async Task<int> CreateBlog(BlogRequestModel requestModel)
 	{
