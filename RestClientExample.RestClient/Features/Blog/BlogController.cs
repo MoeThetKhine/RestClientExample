@@ -39,4 +39,22 @@ public class BlogController : ControllerBase
 
 	#endregion
 
+	[HttpGet("{id}")]
+	public async Task<IActionResult> GetBlog(long id)
+	{
+		try
+		{
+			var item = await _bL_Blog.GetBlog(id);
+			return Ok(new ResponseModel()
+			{
+				IsSuccess = true,
+				Item = item,
+			});
+		}
+		catch(Exception ex)
+		{
+			throw new Exception(ex.Message);
+		}
+	}
+
 }
