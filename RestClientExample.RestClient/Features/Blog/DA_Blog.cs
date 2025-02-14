@@ -98,7 +98,9 @@ public class DA_Blog
 			.AsNoTracking()
 			.FirstOrDefaultAsync(x => x.BlogId == id) ?? throw new Exception("No data found.");
 
-		if(!string.IsNullOrEmpty(requestModel.BlogTitle))
+		#region Validation
+
+		if (!string.IsNullOrEmpty(requestModel.BlogTitle))
 		{
 			item.BlogTitle = requestModel.BlogTitle;
 		}
@@ -111,6 +113,8 @@ public class DA_Blog
 		{
 			item.BlogContent = requestModel.BlogContent;
 		}
+
+		#endregion
 
 		_appDbContext.Entry(item).State |= EntityState.Modified;
 		int result = await _appDbContext.SaveChangesAsync();
