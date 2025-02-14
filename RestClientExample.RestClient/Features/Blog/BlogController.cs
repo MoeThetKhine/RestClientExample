@@ -57,4 +57,35 @@ public class BlogController : ControllerBase
 		}
 	}
 
+	[HttpPost]
+	public async Task<IActionResult> CreateBlog([FromBody]BlogRequestModel requestModel)
+	{
+		try
+		{
+			int result = await _bL_Blog.CreateBlog(requestModel);
+
+			ResponseModel responseModel = new();
+
+			if(result > 0)
+			{
+				return StatusCode(201, responseModel = new()
+				{
+					IsSuccess=true,
+					Message = "Creating Successful!",
+					Item = requestModel
+				});
+			}
+
+			return BadRequest(responseModel = new()
+			{
+				Message = "Creating Fail!",
+				IsSuccess = false
+			});
+		}
+		catch(Exception ex)
+		{
+			throw new Exception(ex.Message);
+		}
+	}
+
 }
