@@ -163,6 +163,8 @@ public class BlogController : ControllerBase
 
 	#endregion
 
+	#region DeleteBlog
+
 	[HttpDelete("{id}")]
 	public async Task<IActionResult> DeleteBlog(long id)
 	{
@@ -184,5 +186,7 @@ public class BlogController : ControllerBase
 			Message = "Deleting Fail."
 		});
 	}
+
+	#endregion
 
 }
