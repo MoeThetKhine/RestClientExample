@@ -104,4 +104,16 @@ public class DA_Blog
 		return result;
 	}
 
+	public async Task<int> DeleteBlog(long id)
+	{
+		BlogModel? item = await _appDbContext.Blogs
+			.AsNoTracking()
+			.FirstOrDefaultAsync(x => x.BlogId == id) ?? throw new Exception("No data Found");
+
+		_appDbContext.Blogs.Remove(item);
+		int result = await _appDbContext.SaveChangesAsync();
+
+		return result;
+	}
+
 }
