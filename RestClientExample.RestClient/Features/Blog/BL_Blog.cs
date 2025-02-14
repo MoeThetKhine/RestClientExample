@@ -52,4 +52,30 @@ public class BL_Blog
 		return result;
 	}
 
+	public async Task<int> UpdateBlog(BlogRequestModel requestModel, long id)
+	{
+		if(id == 0)
+		{
+			throw new Exception("ID cannot be empty.");
+		}
+
+		if (string.IsNullOrEmpty(requestModel.BlogTitle))
+		{
+			throw new Exception("Blog Title cannot be empty.");
+		}
+
+		if(string.IsNullOrEmpty(requestModel.BlogAuthor))
+		{
+			throw new Exception("Blog Author cannot be empty.");
+		}
+
+		if(string.IsNullOrEmpty(requestModel.BlogContent))
+		{
+			throw new Exception("Blog Content cannot be empty.");
+		}
+
+		int result = await _dA_Blog.UpdateBlog(requestModel, id);
+		return result;
+	}
+
 }
