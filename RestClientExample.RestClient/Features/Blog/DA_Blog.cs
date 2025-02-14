@@ -72,6 +72,8 @@ public class DA_Blog
 
 	#endregion
 
+	#region UpdateBlog
+
 	public async Task<int> UpdateBlog(BlogRequestModel requestModel, long id)
 	{
 		BlogModel? item = await _appDbContext.Blogs
@@ -85,6 +87,8 @@ public class DA_Blog
 
 		return result;
 	}
+
+	#endregion
 
 	public async Task<int> PatchBlog(BlogRequestModel requestModel, long id)
 	{
