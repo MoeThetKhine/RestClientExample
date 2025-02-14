@@ -61,12 +61,16 @@ public class DA_Blog
 
 	#endregion
 
+	#region CreateBlog
+
 	public async Task<int> CreateBlog(BlogRequestModel requestModel)
 	{
 		await _appDbContext.Blogs.AddAsync(requestModel.Change());
 		int result = await _appDbContext.SaveChangesAsync();
 		return result;
 	}
+
+	#endregion
 
 	public async Task<int> UpdateBlog(BlogRequestModel requestModel, long id)
 	{
