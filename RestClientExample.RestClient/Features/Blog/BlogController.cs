@@ -129,6 +129,8 @@ public class BlogController : ControllerBase
 
 	#endregion
 
+	#region PatchBlog
+
 	[HttpPatch("{id}")]
 	public async Task<IActionResult> PatchBlog([FromBody] BlogRequestModel requestModel,long id)
 	{
@@ -158,6 +160,8 @@ public class BlogController : ControllerBase
 			throw new Exception(ex.Message);
 		}
 	}
+
+	#endregion
 
 	[HttpDelete("{id}")]
 	public async Task<IActionResult> DeleteBlog(long id)
