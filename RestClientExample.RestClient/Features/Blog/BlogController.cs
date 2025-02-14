@@ -117,4 +117,34 @@ public class BlogController : ControllerBase
 		}
 	}
 
+	[HttpPatch("{id}")]
+	public async Task<IActionResult> PatchBlog([FromBody] BlogRequestModel requestModel,long id)
+	{
+		try
+		{
+			int result = await _bL_Blog.PatchBlog(requestModel,id);
+			ResponseModel responseModel = new();
+
+			if(result > 0)
+			{
+				return StatusCode(202, responseModel = new()
+				{
+					IsSuccess = true,
+					Message = "Updating Successful!",
+					Item = requestModel
+				});
+			}
+
+			return BadRequest(responseModel = new()
+			{
+				IsSuccess = false,
+				Message = "Updating Fail."
+			});
+		}
+		catch(Exception ex)
+		{
+			throw new Exception(ex.Message);
+		}
+	}
+
 }
