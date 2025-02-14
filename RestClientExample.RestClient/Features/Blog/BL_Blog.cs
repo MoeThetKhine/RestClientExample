@@ -21,6 +21,8 @@ public class BL_Blog
 
 	#endregion
 
+	#region GetBlog
+
 	public async Task<BlogModel> GetBlog (long id)
 	{
 		if(id == 0)
@@ -30,6 +32,8 @@ public class BL_Blog
 
 		return await _dA_Blog.GetBlog(id);
 	}
+
+	#endregion
 
 	public async Task<int> CreateBlog(BlogRequestModel requestModel)
 	{
