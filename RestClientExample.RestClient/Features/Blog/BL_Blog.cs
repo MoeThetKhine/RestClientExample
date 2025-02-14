@@ -78,4 +78,15 @@ public class BL_Blog
 		return result;
 	}
 
+	public async Task<int> PatchBlog(BlogRequestModel requestModel, long id)
+	{
+		if(id == 0)
+		{
+			throw new Exception("ID cannot be empty");
+		}
+
+		int result = await _dA_Blog.PatchBlog(requestModel, id);
+		return result;
+	}
+
 }
