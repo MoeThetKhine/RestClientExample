@@ -89,4 +89,15 @@ public class BL_Blog
 		return result;
 	}
 
+	public async Task<int> DeleteBlog(long id)
+	{
+		if (id == 0)
+		{
+			throw new Exception("ID cannot be empty.");
+		}
+
+		int result = await _dA_Blog.DeleteBlog(id);
+		return result;
+	}
+
 }
