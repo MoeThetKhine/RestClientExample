@@ -147,4 +147,26 @@ public class BlogController : ControllerBase
 		}
 	}
 
+	[HttpDelete("{id}")]
+	public async Task<IActionResult> DeleteBlog(long id)
+	{
+		int result = await _bL_Blog.DeleteBlog(id);
+		ResponseModel responseModel = new();
+
+		if(result > 0)
+		{
+			return StatusCode(202, responseModel = new()
+			{
+				IsSuccess = true,
+				Message = "Deleting Successful."
+			});
+		}
+
+		return BadRequest(responseModel = new()
+		{
+			IsSuccess = false,
+			Message = "Deleting Fail."
+		});
+	}
+
 }
