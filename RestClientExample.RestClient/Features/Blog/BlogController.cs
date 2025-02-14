@@ -18,7 +18,7 @@ public class BlogController : ControllerBase
 	{
 		try
 		{
-			BlogListResponseModel lst = await _bL_Blog.GetBlog(pageNo, pageSize);
+			BlogListResponseModel lst = await _bL_Blog.GetBlogs(pageNo, pageSize);
 			return Ok(new ResponseModel()
 			{
 				IsSuccess = true,
