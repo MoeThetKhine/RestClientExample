@@ -64,4 +64,18 @@ public class DA_Blog
 		return result;
 	}
 
+	public async Task<int> UpdateBlog(BlogRequestModel requestModel, long id)
+	{
+		BlogModel? item = await _appDbContext.Blogs
+			.AsNoTracking()
+			.FirstOrDefaultAsync (x => x.BlogId == id) ?? throw new Exception("No data found.");
+		item.BlogTitle = requestModel.BlogTitle;
+		item.BlogAuthor = requestModel.BlogAuthor;
+		item.BlogContent = requestModel.BlogContent;
+		_appDbContext.Entry(item).State = EntityState.Modified;
+		int result = await _appDbContext.SaveChangesAsync();
+
+		return result;
+	}
+
 }
