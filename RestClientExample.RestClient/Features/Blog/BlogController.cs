@@ -39,6 +39,8 @@ public class BlogController : ControllerBase
 
 	#endregion
 
+	#region GetBlog
+
 	[HttpGet("{id}")]
 	public async Task<IActionResult> GetBlog(long id)
 	{
@@ -56,6 +58,8 @@ public class BlogController : ControllerBase
 			throw new Exception(ex.Message);
 		}
 	}
+
+	#endregion
 
 	[HttpPost]
 	public async Task<IActionResult> CreateBlog([FromBody]BlogRequestModel requestModel)
