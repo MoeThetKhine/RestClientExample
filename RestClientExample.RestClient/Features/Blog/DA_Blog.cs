@@ -48,4 +48,13 @@ public class DA_Blog
 
 	#endregion
 
+	public async Task<BlogModel> GetBlog(long id)
+	{
+		var item = await _appDbContext.Blogs
+			.AsNoTracking()
+			.FirstOrDefaultAsync(x => x.BlogId == id);
+
+		return item!;
+	}
+
 }
