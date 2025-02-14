@@ -57,4 +57,11 @@ public class DA_Blog
 		return item!;
 	}
 
+	public async Task<int> CreateBlog(BlogRequestModel requestModel)
+	{
+		await _appDbContext.Blogs.AddAsync(requestModel.Change());
+		int result = await _appDbContext.SaveChangesAsync();
+		return result;
+	}
+
 }
