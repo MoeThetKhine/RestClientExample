@@ -61,6 +61,8 @@ public class BlogController : ControllerBase
 
 	#endregion
 
+	#region CreateBlog
+
 	[HttpPost]
 	public async Task<IActionResult> CreateBlog([FromBody]BlogRequestModel requestModel)
 	{
@@ -91,6 +93,8 @@ public class BlogController : ControllerBase
 			throw new Exception(ex.Message);
 		}
 	}
+
+	#endregion
 
 	[HttpPut("{id}")]
 	public async Task<IActionResult> UpdateBlog([FromBody]BlogRequestModel requestModel,long id)
