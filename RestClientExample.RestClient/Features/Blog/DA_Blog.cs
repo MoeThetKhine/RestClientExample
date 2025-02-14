@@ -120,6 +120,8 @@ public class DA_Blog
 
 	#endregion
 
+	#region DeleteBlog
+
 	public async Task<int> DeleteBlog(long id)
 	{
 		BlogModel? item = await _appDbContext.Blogs
@@ -131,5 +133,7 @@ public class DA_Blog
 
 		return result;
 	}
+
+	#endregion
 
 }
